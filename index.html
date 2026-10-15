@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raíz Viva | Cuidemos el medio ambiente</title>
+  <meta name="description" content="Pequeñas acciones diarias para cuidar el planeta. Súmate al cambio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>try{var t=localStorage.getItem("raizviva-tema");if(t==="dark"||t==="light"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}</script>
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ===== ENCABEZADO Y MENÚ ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-9 5-14 14-14 0 9-5 14-14 14z"/><path d="M5 19c3-4 6-7 10-9"/></svg>
+        Raíz Viva
+      </a>
+
+      <div class="header__right">
+        <nav class="nav" id="nav" aria-label="Principal">
+          <div class="nav__links" id="navLinks">
+            <span class="nav__pill" id="navPill" aria-hidden="true"></span>
+            <a href="#inicio" data-page="inicio">Inicio</a>
+            <a href="#impacto" data-page="impacto">Por qué importa</a>
+            <a href="#galeria" data-page="galeria">Galería</a>
+            <a href="#acciones" data-page="acciones">Acciones</a>
+          </div>
+          <a href="#unete" data-page="unete" class="btn btn--dark nav__cta">Súmate</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar a modo oscuro" aria-pressed="false">
+          <svg class="icon-moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+          <svg class="icon-sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        </button>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PÁGINAS (cada <section class="view"> es una página) ===== -->
+  <main class="viewport" id="viewport">
+
+    <!-- PÁGINA 1: INICIO -->
+    <section class="view" id="view-inicio" tabindex="-1" aria-label="Inicio">
+      <div class="hero-wrap">
+        <div class="leaves" aria-hidden="true">
+          <span style="--x:6%;--s:16px;--d:-2s;--t:13s"></span>
+          <span style="--x:14%;--s:11px;--d:-9s;--t:17s"></span>
+          <span style="--x:24%;--s:20px;--d:-5s;--t:15s"></span>
+          <span style="--x:35%;--s:12px;--d:-12s;--t:19s"></span>
+          <span style="--x:46%;--s:17px;--d:-7s;--t:14s"></span>
+          <span style="--x:57%;--s:13px;--d:-1s;--t:18s"></span>
+          <span style="--x:68%;--s:19px;--d:-10s;--t:16s"></span>
+          <span style="--x:78%;--s:12px;--d:-4s;--t:20s"></span>
+          <span style="--x:88%;--s:16px;--d:-8s;--t:14s"></span>
+          <span style="--x:95%;--s:11px;--d:-14s;--t:17s"></span>
+        </div>
+      <div class="container hero">
+        <div class="hero__text">
+          <span class="tag" data-reveal style="--d:0">Medio ambiente</span>
+          <h1 data-reveal style="--d:1">Cuidar la tierra es cuidar <span class="highlight">nuestro hogar.</span></h1>
+          <p data-reveal style="--d:2">Pequeñas decisiones de todos los días, sumadas entre muchas personas, cambian el rumbo del planeta. Empieza hoy con una acción concreta.</p>
+          <div class="hero__buttons" data-reveal style="--d:3">
+            <a href="#acciones" class="btn btn--accent">Quiero actuar</a>
+            <a href="#impacto" class="btn btn--outline">Conocer más</a>
+          </div>
+        </div>
+
+        <div class="hero__art" id="heroArt" data-reveal style="--d:2">
+          <svg viewBox="0 0 480 480" role="img" aria-label="Ilustración de una planta, un sol y nubes sobre un círculo verde">
+            <g class="layer" data-depth="0">
+              <circle cx="240" cy="240" r="228" fill="#1F5D43"/>
+            </g>
+            <g class="layer" data-depth="10">
+              <circle class="pulse" cx="338" cy="148" r="66" fill="#B7E36A" opacity=".25"/>
+              <circle class="pulse" cx="338" cy="148" r="46" fill="#B7E36A"/>
+            </g>
+            <g class="layer" data-depth="22">
+              <g class="drift">
+                <ellipse cx="130" cy="120" rx="44" ry="15" fill="#E3EAD6"/>
+                <ellipse cx="158" cy="106" rx="26" ry="14" fill="#E3EAD6"/>
+              </g>
+              <g class="drift drift--2">
+                <ellipse cx="300" cy="240" rx="32" ry="11" fill="#E3EAD6" opacity=".8"/>
+                <ellipse cx="320" cy="231" rx="18" ry="10" fill="#E3EAD6" opacity=".8"/>
+              </g>
+            </g>
+            <g class="layer" data-depth="8">
+              <path d="M60 360c60-40 130-40 180-10s120 30 180-10v110H60z" fill="#0F2A20"/>
+            </g>
+            <g class="layer" data-depth="16">
+              <g class="sway sway--soft" style="transform-origin:240px 400px">
+                <path d="M240 400V230" stroke="#F4F6EE" stroke-width="6" stroke-linecap="round" fill="none"/>
+                <path class="sway" style="transform-origin:240px 300px" d="M240 300c-60-6-92-44-92-92 56 4 92 36 92 92z" fill="#B7E36A"/>
+                <path class="sway sway--2" style="transform-origin:240px 260px" d="M240 260c52-6 84-38 90-86-52 2-90 34-90 86z" fill="#E3EAD6"/>
+                <path class="sway" style="transform-origin:240px 345px" d="M240 345c-40-2-64-28-66-62 40 2 64 24 66 62z" fill="#E3EAD6"/>
+              </g>
+            </g>
+            <g class="layer" data-depth="34">
+              <path class="floaty" d="M70 220c14-4 24-14 26-28-14 2-24 12-26 28z" fill="#B7E36A"/>
+              <path class="floaty floaty--2" d="M400 300c14-4 24-14 26-28-14 2-24 12-26 28z" fill="#E3EAD6"/>
+              <path class="floaty floaty--3" d="M110 300c10-3 17-10 19-20-10 1-17 8-19 20z" fill="#E3EAD6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      </div>
+
+      <!-- Cinta de palabras en movimiento -->
+      <div class="marquee" aria-label="Reduce, reutiliza, recicla, repara, rechaza, siembra, comparte">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span>Reduce</span><span>Reutiliza</span><span>Recicla</span><span>Repara</span><span>Rechaza</span><span>Siembra</span><span>Comparte</span>
+          </div>
+          <div class="marquee__group" aria-hidden="true">
+            <span>Reduce</span><span>Reutiliza</span><span>Recicla</span><span>Repara</span><span>Rechaza</span><span>Siembra</span><span>Comparte</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjetas que llevan a las otras páginas -->
+      <div class="container explore-cards">
+        <a href="#impacto" class="teaser" data-tilt data-reveal style="--d:0">
+          <span class="teaser__kicker">Conoce</span>
+          <h2>Por qué importa</h2>
+          <p>Agua, energía y bosques: lo que sostiene nuestra vida.</p>
+          <span class="teaser__arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#acciones" class="teaser" data-tilt data-reveal style="--d:1">
+          <span class="teaser__kicker">Haz</span>
+          <h2>Acciones</h2>
+          <p>Elige tus compromisos y sigue tu progreso.</p>
+          <span class="teaser__arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#unete" class="teaser" data-tilt data-reveal style="--d:2">
+          <span class="teaser__kicker">Únete</span>
+          <h2>Súmate</h2>
+          <p>Recibe un consejo práctico cada semana.</p>
+          <span class="teaser__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="container"><nav class="pager" data-pager aria-label="Navegación entre páginas"></nav></div>
+    </section>
+
+    <!-- PÁGINA 2: POR QUÉ IMPORTA -->
+    <section class="view" id="view-impacto" tabindex="-1" aria-label="Por qué importa">
+      <div class="container page">
+        <div class="section__head">
+          <span class="tag" data-reveal style="--d:0">Por qué importa</span>
+          <h2 data-reveal style="--d:1">Tres cosas que no podemos dar por sentadas</h2>
+          <p data-reveal style="--d:2">Todo lo que comemos, bebemos y respiramos depende de ecosistemas que funcionan en equilibrio. Elige un tema para explorarlo.</p>
+        </div>
+
+        <div class="explore" data-reveal style="--d:3">
+          <div class="tablist" role="tablist" aria-label="Temas" aria-orientation="vertical">
+            <button class="tab" role="tab" id="tab-agua" aria-selected="true" aria-controls="panel-agua">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg>
+              Agua limpia
+            </button>
+            <button class="tab" role="tab" id="tab-energia" aria-selected="false" aria-controls="panel-energia" tabindex="-1">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+              Energía limpia
+            </button>
+            <button class="tab" role="tab" id="tab-bosques" aria-selected="false" aria-controls="panel-bosques" tabindex="-1">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 14c-4 0-6-2-6-6 4 0 6 2 6 6z"/><path d="M12 12c0-4 2-6 6-6 0 4-2 6-6 6z"/></svg>
+              Bosques y biodiversidad
+            </button>
+          </div>
+
+          <div class="tabpanels">
+            <!-- Panel agua -->
+            <div class="panel is-active" role="tabpanel" id="panel-agua" aria-labelledby="tab-agua">
+              <div class="panel__text">
+                <h3>Agua limpia</h3>
+                <p>Ríos, lagos y acuíferos sostienen la vida, la agricultura y la salud. Cuando se contaminan o se desperdician, toda la comunidad lo siente.</p>
+                <ul class="checklist">
+                  <li>Cierra la llave mientras te enjabonas o te cepillas los dientes.</li>
+                  <li>Repara las fugas de grifos y tuberías.</li>
+                  <li>No tires aceites, pinturas ni basura a desagües o ríos.</li>
+                </ul>
+              </div>
+              <div class="panel__art">
+                <svg viewBox="0 0 320 260" role="img" aria-label="Una gota de agua sobre olas en movimiento">
+                  <rect width="320" height="260" fill="#1F5D43"/>
+                  <circle class="ripple" cx="160" cy="170" r="20" fill="none" stroke="#E3EAD6" stroke-width="3"/>
+                  <circle class="ripple ripple--2" cx="160" cy="170" r="20" fill="none" stroke="#E3EAD6" stroke-width="3"/>
+                  <path class="bob" d="M160 36c40 52 60 88 60 118a60 60 0 0 1-120 0c0-30 20-66 60-118z" fill="#B7E36A"/>
+                  <path class="wave" d="M0 205q40-20 80 0t80 0t80 0t80 0t80 0t80 0V260H0z" fill="#E3EAD6" opacity=".9"/>
+                  <path class="wave wave--2" d="M0 225q40-18 80 0t80 0t80 0t80 0t80 0t80 0V260H0z" fill="#0F2A20" opacity=".55"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Panel energía -->
+            <div class="panel" role="tabpanel" id="panel-energia" aria-labelledby="tab-energia">
+              <div class="panel__text">
+                <h3>Usar menos energía, y mejor</h3>
+                <p>La energía que usamos en casa y en el trabajo viene, en gran parte, de fuentes que calientan el planeta. Ahorrar y elegir renovables marca la diferencia.</p>
+                <ul class="checklist">
+                  <li>Apaga luces y desconecta los aparatos que no uses.</li>
+                  <li>Prefiere focos y electrodomésticos eficientes.</li>
+                  <li>Si puedes, elige energía renovable como la solar.</li>
+                </ul>
+              </div>
+              <div class="panel__art">
+                <svg viewBox="0 0 320 260" role="img" aria-label="Un sol con rayos y un molino de viento girando">
+                  <rect width="320" height="260" fill="#1F5D43"/>
+                  <g class="spin spin--slow" style="transform-origin:90px 90px">
+                    <circle cx="90" cy="90" r="30" fill="#B7E36A"/>
+                    <path d="M90 36v14M90 130v14M36 90h14M130 90h14M52 52l10 10M118 118l10 10M128 52l-10 10M62 118l-10 10" stroke="#B7E36A" stroke-width="5" stroke-linecap="round"/>
+                  </g>
+                  <path d="M0 236q80-30 160-8t160-10V260H0z" fill="#0F2A20"/>
+                  <path d="M222 236L228 120h8l6 116z" fill="#E3EAD6"/>
+                  <g class="spin" style="transform-origin:232px 114px">
+                    <path d="M232 114L222 52q10-8 20 0z" fill="#E3EAD6"/>
+                    <path d="M232 114L284 148q2 12-8 14z" fill="#E3EAD6"/>
+                    <path d="M232 114L180 148q-2 12 8 14z" fill="#E3EAD6"/>
+                  </g>
+                  <circle cx="232" cy="114" r="7" fill="#B7E36A"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Panel bosques -->
+            <div class="panel" role="tabpanel" id="panel-bosques" aria-labelledby="tab-bosques">
+              <div class="panel__text">
+                <h3>Bosques y biodiversidad</h3>
+                <p>Los bosques regulan el clima, protegen el suelo y dan hogar a miles de especies. Protegerlos es proteger el futuro común.</p>
+                <ul class="checklist">
+                  <li>Siembra y cuida árboles nativos.</li>
+                  <li>Elige madera y papel de fuentes responsables.</li>
+                  <li>Respeta la fauna y los espacios naturales cuando los visites.</li>
+                </ul>
+              </div>
+              <div class="panel__art">
+                <svg viewBox="0 0 320 260" role="img" aria-label="Tres árboles meciéndose con el viento">
+                  <rect width="320" height="260" fill="#1F5D43"/>
+                  <circle cx="250" cy="56" r="22" fill="#B7E36A" class="pulse"/>
+                  <path d="M0 232q80-24 160-6t160-8V260H0z" fill="#0F2A20"/>
+                  <g class="sway" style="transform-origin:90px 236px">
+                    <rect x="86" y="170" width="8" height="66" fill="#E3EAD6"/>
+                    <path d="M90 74l-42 66h84z" fill="#B7E36A"/>
+                    <path d="M90 108l-52 74h104z" fill="#B7E36A"/>
+                  </g>
+                  <g class="sway sway--2" style="transform-origin:170px 240px">
+                    <rect x="166" y="150" width="8" height="90" fill="#E3EAD6"/>
+                    <path d="M170 46l-48 76h96z" fill="#E3EAD6"/>
+                    <path d="M170 90l-60 84h120z" fill="#E3EAD6"/>
+                  </g>
+                  <g class="sway" style="transform-origin:246px 238px; animation-delay:-2s">
+                    <rect x="242" y="184" width="8" height="54" fill="#E3EAD6"/>
+                    <path d="M246 110l-34 56h68z" fill="#B7E36A"/>
+                    <path d="M246 140l-42 54h84z" fill="#B7E36A"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="pager" data-pager aria-label="Navegación entre páginas"></nav>
+      </div>
+    </section>
+
+    <!-- PÁGINA 3: GALERÍA -->
+    <section class="view" id="view-galeria" tabindex="-1" aria-label="Galería">
+      <div class="container page">
+        <div class="section__head">
+          <span class="tag" data-reveal style="--d:0">Galería</span>
+          <h2 data-reveal style="--d:1">La naturaleza que queremos cuidar</h2>
+          <p data-reveal style="--d:2">Toca cualquier imagen para verla en grande. Usa las flechas para pasar de una a otra.</p>
+        </div>
+
+        <div class="gallery" data-reveal style="--d:3">
+
+          <figure class="tile tile--tall">
+            <button class="tile__btn" type="button" data-lightbox data-caption="Bosque al amanecer" aria-label="Ampliar imagen: Bosque al amanecer">
+              <span class="tile__media">
+                <img src="images/foto-1.jpg" alt="" data-photo loading="lazy">
+                <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="300" fill="#E3EAD6"/>
+                  <circle cx="270" cy="130" r="54" fill="#F2C94C"/>
+                  <path d="M0 190q60-30 130-10t140-14 130 8V300H0z" fill="#8FD3C1" opacity=".7"/>
+                  <g fill="#1F5D43"><path d="M40 300l30-110 30 110z"/><path d="M90 300l26-90 26 90z"/><path d="M300 300l32-120 32 120z"/><path d="M350 300l24-80 24 80z"/></g>
+                  <g fill="#0F2A20"><path d="M-10 300l36-140 36 140z"/><path d="M150 300l34-130 34 130z"/><path d="M220 300l28-100 28 100z"/></g>
+                  <rect y="250" width="400" height="50" fill="#0F2A20"/>
+                  <ellipse cx="200" cy="238" rx="190" ry="14" fill="#F4F6EE" opacity=".35"/>
+                </svg>
+              </span>
+              <span class="tile__zoom" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+              <figcaption class="tile__cap">Bosque al amanecer</figcaption>
+            </button>
+          </figure>
+
+          <figure class="tile tile--wide">
+            <button class="tile__btn" type="button" data-lightbox data-caption="Océano en calma" aria-label="Ampliar imagen: Océano en calma">
+              <span class="tile__media">
+                <img src="images/foto-2.jpg" alt="" data-photo loading="lazy">
+                <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="300" fill="#E3EAD6"/>
+                  <circle cx="110" cy="120" r="40" fill="#F2C94C"/>
+                  <rect y="170" width="400" height="130" fill="#1F5D43"/>
+                  <g fill="none" stroke="#8FD3C1" stroke-width="4" stroke-linecap="round"><path d="M20 200q20-10 40 0t40 0"/><path d="M190 225q20-10 40 0t40 0"/><path d="M80 255q20-10 40 0t40 0"/><path d="M300 195q20-10 40 0t40 0"/></g>
+                  <path d="M236 168h70l-10 14h-50z" fill="#0F2A20"/>
+                  <path d="M270 168V92" stroke="#0F2A20" stroke-width="3"/>
+                  <path d="M270 96l36 66h-36z" fill="#F4F6EE"/>
+                  <path d="M266 110l-26 52h26z" fill="#E3EAD6"/>
+                </svg>
+              </span>
+              <span class="tile__zoom" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+              <figcaption class="tile__cap">Océano en calma</figcaption>
+            </button>
+          </figure>
+
+          <figure class="tile">
+            <button class="tile__btn" type="button" data-lightbox data-caption="Montañas y cielo limpio" aria-label="Ampliar imagen: Montañas y cielo limpio">
+              <span class="tile__media">
+                <img src="images/foto-3.jpg" alt="" data-photo loading="lazy">
+                <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="300" fill="#8FD3C1"/>
+                  <circle cx="330" cy="70" r="30" fill="#F2C94C"/>
+                  <path d="M-10 300L110 110 200 220 280 90 410 300z" fill="#1F5D43"/>
+                  <path d="M110 110l-20 28 14-6 6 10 8-10 14 6z" fill="#F4F6EE"/>
+                  <path d="M280 90l-22 30 14-7 8 11 8-11 14 7z" fill="#F4F6EE"/>
+                  <path d="M-10 300L80 190 160 260 240 180 330 270 410 210V300z" fill="#0F2A20"/>
+                  <path d="M60 60q8-8 16 0M84 48q8-8 16 0" fill="none" stroke="#0F2A20" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="tile__zoom" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+              <figcaption class="tile__cap">Montañas y cielo limpio</figcaption>
+            </button>
+          </figure>
+
+          <figure class="tile">
+            <button class="tile__btn" type="button" data-lightbox data-caption="Un río que sigue vivo" aria-label="Ampliar imagen: Un río que sigue vivo">
+              <span class="tile__media">
+                <img src="images/foto-4.jpg" alt="" data-photo loading="lazy">
+                <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="300" fill="#B7E36A"/>
+                  <path d="M0 0h400v80Q300 60 200 90T0 70z" fill="#1F5D43" opacity=".35"/>
+                  <path d="M200 -10C120 70 300 120 210 190S120 260 190 310" fill="none" stroke="#8FD3C1" stroke-width="38" stroke-linecap="round"/>
+                  <path d="M200 -10C120 70 300 120 210 190S120 260 190 310" fill="none" stroke="#E3EAD6" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+                  <g fill="#1F5D43"><circle cx="60" cy="90" r="26"/><circle cx="330" cy="70" r="22"/><circle cx="60" cy="230" r="30"/><circle cx="340" cy="240" r="26"/><circle cx="310" cy="160" r="16"/></g>
+                  <g fill="#0F2A20"><circle cx="40" cy="120" r="16"/><circle cx="360" cy="190" r="18"/><circle cx="90" cy="280" r="18"/></g>
+                </svg>
+              </span>
+              <span class="tile__zoom" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+              <figcaption class="tile__cap">Un río que sigue vivo</figcaption>
+            </button>
+          </figure>
+
+          <figure class="tile tile--wide">
+            <button class="tile__btn" type="button" data-lightbox data-caption="Campos de cultivo" aria-label="Ampliar imagen: Campos de cultivo">
+              <span class="tile__media">
+                <img src="images/foto-5.jpg" alt="" data-photo loading="lazy">
+                <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="300" fill="#E3EAD6"/>
+                  <circle cx="320" cy="70" r="34" fill="#F2C94C"/>
+                  <g fill="#F4F6EE"><ellipse cx="90" cy="70" rx="40" ry="12"/><ellipse cx="116" cy="58" rx="24" ry="12"/><ellipse cx="220" cy="100" rx="30" ry="9" opacity=".8"/></g>
+                  <rect y="150" width="400" height="150" fill="#B7E36A"/>
+                  <path d="M0 150q100-30 200-10t200 10v10H0z" fill="#1F5D43" opacity=".6"/>
+                  <path d="M200 156L-100 300M200 156L10 300M200 156L110 300M200 156L200 300M200 156L290 300M200 156L390 300M200 156L500 300" stroke="#1F5D43" stroke-width="7" stroke-linecap="round" fill="none"/>
+                </svg>
+              </span>
+              <span class="tile__zoom" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+              <figcaption class="tile__cap">Campos de cultivo</figcaption>
+            </button>
+          </figure>
+
+          <figure class="tile">
+            <button class="tile__btn" type="button" data-lightbox data-caption="Atardecer sobre la tierra" aria-label="Ampliar imagen: Atardecer sobre la tierra">
+              <span class="tile__media">
+                <img src="images/foto-6.jpg" alt="" data-photo loading="lazy">
+                <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect width="400" height="300" fill="#F4A07A"/>
+                  <rect y="100" width="400" height="200" fill="#F6B87C"/>
+                  <rect y="165" width="400" height="135" fill="#F2C94C"/>
+                  <circle cx="200" cy="205" r="52" fill="#F4F6EE" opacity=".92"/>
+                  <g fill="#F4F6EE" opacity=".55"><ellipse cx="80" cy="70" rx="48" ry="10"/><ellipse cx="320" cy="110" rx="40" ry="9"/></g>
+                  <path d="M0 225q100-22 200-6t200-8V300H0z" fill="#0F2A20"/>
+                  <rect x="62" y="180" width="6" height="56" fill="#0F2A20"/>
+                  <circle cx="65" cy="172" r="24" fill="#0F2A20"/>
+                </svg>
+              </span>
+              <span class="tile__zoom" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg></span>
+              <figcaption class="tile__cap">Atardecer sobre la tierra</figcaption>
+            </button>
+          </figure>
+        </div>
+
+        <nav class="pager" data-pager aria-label="Navegación entre páginas"></nav>
+      </div>
+    </section>
+
+    <!-- PÁGINA 4: ACCIONES -->
+    <section class="view" id="view-acciones" tabindex="-1" aria-label="Acciones">
+      <div class="container page">
+        <div class="section__head">
+          <span class="tag" data-reveal style="--d:0">Acciones</span>
+          <h2 data-reveal style="--d:1">Cuatro acciones para empezar esta semana</h2>
+          <p data-reveal style="--d:2">No hace falta hacerlo todo. Toca “Me comprometo” en las que quieras practicar y mira cómo crece tu progreso.</p>
+        </div>
+
+        <div class="progress-card" data-reveal style="--d:3">
+          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="ring__track" cx="60" cy="60" r="52"/>
+            <circle class="ring__value" id="ringValue" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="progress-card__text">
+            <p class="progress-card__count"><strong id="commitCount">0</strong> de 4 compromisos</p>
+            <p class="progress-card__msg" id="commitMsg" aria-live="polite">Elige tu primera acción.</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <article class="action" data-reveal style="--d:4">
+            <span class="action__num">01</span>
+            <h3>Reduce y reutiliza</h3>
+            <p>Lleva tu bolsa y tu botella. Repara antes de reemplazar.</p>
+            <div class="action__details" id="det-1"><div><ul class="checklist">
+              <li>Compra a granel cuando puedas.</li>
+              <li>Dona o repara antes de tirar.</li>
+              <li>Di no a lo desechable que no necesitas.</li>
+            </ul></div></div>
+            <div class="action__buttons">
+              <button class="btn btn--toggle" data-commit="reducir" aria-pressed="false"><span data-label>Me comprometo</span></button>
+              <button class="action__more" aria-expanded="false" aria-controls="det-1">Ver ideas</button>
+            </div>
+          </article>
+
+          <article class="action" data-reveal style="--d:5">
+            <span class="action__num">02</span>
+            <h3>Separa tus residuos</h3>
+            <p>Clasifica orgánicos, plásticos, papel y vidrio. Composta lo que puedas.</p>
+            <div class="action__details" id="det-2"><div><ul class="checklist">
+              <li>Ten recipientes distintos en casa.</li>
+              <li>Enjuaga los envases antes de reciclar.</li>
+              <li>Composta restos de frutas y verduras.</li>
+            </ul></div></div>
+            <div class="action__buttons">
+              <button class="btn btn--toggle" data-commit="separar" aria-pressed="false"><span data-label>Me comprometo</span></button>
+              <button class="action__more" aria-expanded="false" aria-controls="det-2">Ver ideas</button>
+            </div>
+          </article>
+
+          <article class="action" data-reveal style="--d:6">
+            <span class="action__num">03</span>
+            <h3>Ahorra agua y energía</h3>
+            <p>Cierra la llave, apaga lo que no usas y elige aparatos eficientes.</p>
+            <div class="action__details" id="det-3"><div><ul class="checklist">
+              <li>Toma duchas más cortas.</li>
+              <li>Aprovecha la luz natural.</li>
+              <li>Desconecta los cargadores que no uses.</li>
+            </ul></div></div>
+            <div class="action__buttons">
+              <button class="btn btn--toggle" data-commit="ahorrar" aria-pressed="false"><span data-label>Me comprometo</span></button>
+              <button class="action__more" aria-expanded="false" aria-controls="det-3">Ver ideas</button>
+            </div>
+          </article>
+
+          <article class="action" data-reveal style="--d:7">
+            <span class="action__num">04</span>
+            <h3>Muévete mejor</h3>
+            <p>Camina, usa bicicleta o transporte compartido siempre que puedas.</p>
+            <div class="action__details" id="det-4"><div><ul class="checklist">
+              <li>Camina o pedalea en trayectos cortos.</li>
+              <li>Comparte el auto con compañeros.</li>
+              <li>Prefiere el transporte público.</li>
+            </ul></div></div>
+            <div class="action__buttons">
+              <button class="btn btn--toggle" data-commit="moverse" aria-pressed="false"><span data-label>Me comprometo</span></button>
+              <button class="action__more" aria-expanded="false" aria-controls="det-4">Ver ideas</button>
+            </div>
+          </article>
+        </div>
+
+        <nav class="pager" data-pager aria-label="Navegación entre páginas"></nav>
+      </div>
+    </section>
+
+    <!-- PÁGINA 5: SÚMATE -->
+    <section class="view" id="view-unete" tabindex="-1" aria-label="Súmate">
+      <div class="container page">
+        <div class="join">
+          <div class="join__text">
+            <span class="tag" data-reveal style="--d:0">Súmate</span>
+            <h2 data-reveal style="--d:1">Un planeta sano es tarea de todos.</h2>
+            <p data-reveal style="--d:2">Cuando una comunidad cambia sus hábitos, el efecto se multiplica. Deja tus datos y recibe ideas simples para empezar.</p>
+            <ul class="checklist" data-reveal style="--d:3">
+              <li>Un consejo práctico cada semana.</li>
+              <li>Ideas para casa, escuela o trabajo.</li>
+              <li>Puedes cancelar cuando quieras.</li>
+            </ul>
+          </div>
+
+          <div class="join__card" id="joinCard" data-reveal style="--d:2">
+            <form id="joinForm" novalidate>
+              <div class="field">
+                <label for="name">Tu nombre</label>
+                <input type="text" id="name" name="name" placeholder="María" autocomplete="given-name" aria-describedby="err-name">
+                <p class="field__error" id="err-name" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="email">Tu correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="nombre@correo.com" autocomplete="email" aria-describedby="err-email">
+                <p class="field__error" id="err-email" role="alert"></p>
+              </div>
+
+              <fieldset class="field">
+                <legend>¿Qué te interesa más?</legend>
+                <div class="chips">
+                  <label class="chip"><input type="checkbox" name="interes" value="agua"><span>Agua</span></label>
+                  <label class="chip"><input type="checkbox" name="interes" value="energia"><span>Energía</span></label>
+                  <label class="chip"><input type="checkbox" name="interes" value="residuos"><span>Residuos</span></label>
+                  <label class="chip"><input type="checkbox" name="interes" value="bosques"><span>Bosques</span></label>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="btn btn--dark btn--block">Suscribirme</button>
+            </form>
+
+            <div class="success" id="success" hidden>
+              <svg viewBox="0 0 80 80" class="success__check" aria-hidden="true">
+                <circle cx="40" cy="40" r="36"/>
+                <path d="M24 41l11 11 21-24"/>
+              </svg>
+              <h3 id="successTitle">¡Gracias por sumarte!</h3>
+              <p>Pronto recibirás tu primer consejo.</p>
+              <button type="button" class="btn btn--outline" id="again">Registrar otro correo</button>
+            </div>
+          </div>
+        </div>
+
+        <nav class="pager" data-pager aria-label="Navegación entre páginas"></nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== VISOR DE IMÁGENES (galería) ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+    <button class="lightbox__close" id="lbClose" type="button" aria-label="Cerrar">×</button>
+    <button class="lightbox__nav" id="lbPrev" type="button" aria-label="Imagen anterior">←</button>
+    <figure class="lightbox__figure">
+      <div class="lightbox__media" id="lbMedia"></div>
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lightbox__nav" id="lbNext" type="button" aria-label="Imagen siguiente">→</button>
+  </div>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <strong>Raíz Viva</strong>
+      <span>© <span id="year">2026</span> Raíz Viva. Hecho con cariño por el planeta.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
