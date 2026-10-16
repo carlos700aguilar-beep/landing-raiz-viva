@@ -2,7 +2,7 @@
    RAÍZ VIVA - JavaScript
    1 Páginas (navegación con deslizamiento) · 2 Menú móvil
    3 Barra de progreso · 4 Parallax y tarjetas 3D
-   5 Pestañas · 6 Compromisos · 7 Formulario · 8 Teclado y swipe
+   5 Pestañas · 7 Formulario · 8 Teclado y swipe
    9 Modo oscuro · 10 Galería y visor de imágenes
    ===================================================== */
 (() => {
@@ -213,94 +213,12 @@
     });
   });
 
-  /* ---------- 6. COMPROMISOS (Acciones) ---------- */
-  const STORAGE_KEY = 'raizviva-compromisos';
-  const CIRCUMFERENCE = 326.73; // 2 * π * 52
-  const commitButtons = Array.from(document.querySelectorAll('[data-commit]'));
-  const ringValue = document.getElementById('ringValue');
-  const commitCount = document.getElementById('commitCount');
-  const commitMsg = document.getElementById('commitMsg');
-  const MESSAGES = [
-    'Elige tu primera acción.',
-    '¡Buen comienzo!',
-    'Vas por buen camino.',
-    '¡Casi lo logras!',
-    '¡Eres un guardián del planeta!'
-  ];
-
-  let done = [];
-  try {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if (Array.isArray(saved)) done = saved;
-  } catch (err) { /* sin almacenamiento: seguimos sin guardar */ }
-
-  function saveCommitments() {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(done)); } catch (err) { /* nada */ }
-  }
-
-  function renderCommitments() {
-    commitButtons.forEach((btn) => {
-      const on = done.includes(btn.dataset.commit);
-      btn.setAttribute('aria-pressed', String(on));
-      btn.querySelector('[data-label]').textContent = on ? 'Comprometido' : 'Me comprometo';
-      btn.closest('.action').classList.toggle('is-done', on);
-    });
-    const n = done.length;
-    ringValue.style.strokeDashoffset = String(CIRCUMFERENCE * (1 - n / commitButtons.length));
-    commitCount.textContent = String(n);
-    commitMsg.textContent = MESSAGES[n] || MESSAGES[0];
-  }
-
-  function leafBurst(button) {
-    if (reduceMotion) return;
-    const r = button.getBoundingClientRect();
-    const cx = r.left + r.width / 2;
-    const cy = r.top + r.height / 2;
-    for (let i = 0; i < 9; i++) {
-      const leaf = document.createElement('span');
-      const angle = (Math.PI * 2 * i) / 9 + Math.random() * 0.5;
-      const dist = 50 + Math.random() * 50;
-      leaf.className = 'leaf-burst';
-      leaf.style.left = cx + 'px';
-      leaf.style.top = cy + 'px';
-      leaf.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
-      leaf.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
-      leaf.style.setProperty('--rot', Math.round(Math.random() * 360) + 'deg');
-      document.body.appendChild(leaf);
-      setTimeout(() => leaf.remove(), 950);
-    }
-  }
-
-  commitButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.commit;
-      if (done.includes(id)) {
-        done = done.filter((x) => x !== id);
-      } else {
-        done.push(id);
-        leafBurst(btn);
-      }
-      saveCommitments();
-      renderCommitments();
-    });
-  });
-  renderCommitments();
-
-  // "Ver ideas": abre y cierra los detalles de cada acción
-  document.querySelectorAll('.action__more').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const panel = document.getElementById(btn.getAttribute('aria-controls'));
-      const open = btn.getAttribute('aria-expanded') !== 'true';
-      btn.setAttribute('aria-expanded', String(open));
-      btn.textContent = open ? 'Ocultar ideas' : 'Ver ideas';
-      panel.classList.toggle('is-open', open);
-    });
-  });
-
   /* ---------- 7. FORMULARIO (Súmate) ---------- */
   const form = document.getElementById('joinForm');
   const nameInput = document.getElementById('name');
   const emailInput = document.getElementById('email');
+  const phoneInput = document.getElementById('phone');
+  const countrySelect = document.getElementById('country');
   const success = document.getElementById('success');
   const successTitle = document.getElementById('successTitle');
   const again = document.getElementById('again');
@@ -318,6 +236,8 @@
     e.preventDefault();
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
+    const dial = countrySelect.selectedOptions[0].dataset.dial;
+    const phoneDigits = phoneInput.value.replace(/\D/g, '');
     let firstInvalid = null;
 
     if (name.length < 2) {
@@ -325,6 +245,21 @@
       firstInvalid = firstInvalid || nameInput;
     } else {
       setError(nameInput, '');
+    }
+
+    // Cada país tiene su cantidad de dígitos (sin el código del país ni el 0 inicial)
+    const opt = countrySelect.selectedOptions[0];
+    const minDigits = Number(opt.dataset.min);
+    const maxDigits = Number(opt.dataset.max);
+    const phoneOk = phoneDigits.length >= minDigits && phoneDigits.length <= maxDigits;
+    if (!phoneOk) {
+      const cuantos = minDigits === maxDigits
+        ? 'de ' + minDigits + ' dígitos'
+        : 'con entre ' + minDigits + ' y ' + maxDigits + ' dígitos';
+      setError(phoneInput, 'Escribe un teléfono ' + cuantos + ', por ejemplo ' + opt.dataset.ph + '.');
+      firstInvalid = firstInvalid || phoneInput;
+    } else {
+      setError(phoneInput, '');
     }
 
     if (!emailPattern.test(email)) {
@@ -343,7 +278,7 @@
     // fetch('https://tu-servidor.com/suscribir', {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ name, email })
+    //   body: JSON.stringify({ name, phone: '+' + dial + phoneDigits, email })
     // });
 
     successTitle.textContent = '¡Gracias por sumarte, ' + name + '!';
@@ -356,9 +291,21 @@
     svg.style.animation = '';
   });
 
-  [nameInput, emailInput].forEach((input) => {
+  [nameInput, emailInput, phoneInput].forEach((input) => {
     input.addEventListener('input', () => setError(input, ''));
   });
+  // El teléfono solo acepta números, espacios y guiones
+  phoneInput.addEventListener('input', () => {
+    phoneInput.value = phoneInput.value.replace(/[^\d\s-]/g, '');
+  });
+  function updatePhonePlaceholder() {
+    phoneInput.placeholder = countrySelect.selectedOptions[0].dataset.ph;
+  }
+  countrySelect.addEventListener('change', () => {
+    setError(phoneInput, '');
+    updatePhonePlaceholder();
+  });
+  updatePhonePlaceholder();
 
   again.addEventListener('click', () => {
     form.reset();

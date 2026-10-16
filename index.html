@@ -140,7 +140,7 @@
         <a href="#acciones" class="teaser" data-tilt data-reveal style="--d:1">
           <span class="teaser__kicker">Haz</span>
           <h2>Acciones</h2>
-          <p>Elige tus compromisos y sigue tu progreso.</p>
+          <p>Ideas sencillas para el día a día.</p>
           <span class="teaser__arrow" aria-hidden="true">→</span>
         </a>
         <a href="#unete" class="teaser" data-tilt data-reveal style="--d:2">
@@ -410,79 +410,53 @@
         <div class="section__head">
           <span class="tag" data-reveal style="--d:0">Acciones</span>
           <h2 data-reveal style="--d:1">Cuatro acciones para empezar esta semana</h2>
-          <p data-reveal style="--d:2">No hace falta hacerlo todo. Toca “Me comprometo” en las que quieras practicar y mira cómo crece tu progreso.</p>
+          <p data-reveal style="--d:2">Pequeños cambios en casa, la escuela o el trabajo que sí hacen la diferencia. Empieza por la que te resulte más fácil.</p>
         </div>
 
-        <div class="progress-card" data-reveal style="--d:3">
-          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
-            <circle class="ring__track" cx="60" cy="60" r="52"/>
-            <circle class="ring__value" id="ringValue" cx="60" cy="60" r="52"/>
-          </svg>
-          <div class="progress-card__text">
-            <p class="progress-card__count"><strong id="commitCount">0</strong> de 4 compromisos</p>
-            <p class="progress-card__msg" id="commitMsg" aria-live="polite">Elige tu primera acción.</p>
-          </div>
-        </div>
 
         <div class="actions">
           <article class="action" data-reveal style="--d:4">
             <span class="action__num">01</span>
             <h3>Reduce y reutiliza</h3>
             <p>Lleva tu bolsa y tu botella. Repara antes de reemplazar.</p>
-            <div class="action__details" id="det-1"><div><ul class="checklist">
+            <ul class="checklist">
               <li>Compra a granel cuando puedas.</li>
               <li>Dona o repara antes de tirar.</li>
               <li>Di no a lo desechable que no necesitas.</li>
-            </ul></div></div>
-            <div class="action__buttons">
-              <button class="btn btn--toggle" data-commit="reducir" aria-pressed="false"><span data-label>Me comprometo</span></button>
-              <button class="action__more" aria-expanded="false" aria-controls="det-1">Ver ideas</button>
-            </div>
+            </ul>
           </article>
 
           <article class="action" data-reveal style="--d:5">
             <span class="action__num">02</span>
             <h3>Separa tus residuos</h3>
             <p>Clasifica orgánicos, plásticos, papel y vidrio. Composta lo que puedas.</p>
-            <div class="action__details" id="det-2"><div><ul class="checklist">
+            <ul class="checklist">
               <li>Ten recipientes distintos en casa.</li>
               <li>Enjuaga los envases antes de reciclar.</li>
               <li>Composta restos de frutas y verduras.</li>
-            </ul></div></div>
-            <div class="action__buttons">
-              <button class="btn btn--toggle" data-commit="separar" aria-pressed="false"><span data-label>Me comprometo</span></button>
-              <button class="action__more" aria-expanded="false" aria-controls="det-2">Ver ideas</button>
-            </div>
+            </ul>
           </article>
 
           <article class="action" data-reveal style="--d:6">
             <span class="action__num">03</span>
             <h3>Ahorra agua y energía</h3>
             <p>Cierra la llave, apaga lo que no usas y elige aparatos eficientes.</p>
-            <div class="action__details" id="det-3"><div><ul class="checklist">
+            <ul class="checklist">
               <li>Toma duchas más cortas.</li>
               <li>Aprovecha la luz natural.</li>
               <li>Desconecta los cargadores que no uses.</li>
-            </ul></div></div>
-            <div class="action__buttons">
-              <button class="btn btn--toggle" data-commit="ahorrar" aria-pressed="false"><span data-label>Me comprometo</span></button>
-              <button class="action__more" aria-expanded="false" aria-controls="det-3">Ver ideas</button>
-            </div>
+            </ul>
           </article>
 
           <article class="action" data-reveal style="--d:7">
             <span class="action__num">04</span>
             <h3>Muévete mejor</h3>
             <p>Camina, usa bicicleta o transporte compartido siempre que puedas.</p>
-            <div class="action__details" id="det-4"><div><ul class="checklist">
+            <ul class="checklist">
               <li>Camina o pedalea en trayectos cortos.</li>
               <li>Comparte el auto con compañeros.</li>
               <li>Prefiere el transporte público.</li>
-            </ul></div></div>
-            <div class="action__buttons">
-              <button class="btn btn--toggle" data-commit="moverse" aria-pressed="false"><span data-label>Me comprometo</span></button>
-              <button class="action__more" aria-expanded="false" aria-controls="det-4">Ver ideas</button>
-            </div>
+            </ul>
           </article>
         </div>
 
@@ -511,6 +485,75 @@
                 <label for="name">Tu nombre</label>
                 <input type="text" id="name" name="name" placeholder="María" autocomplete="given-name" aria-describedby="err-name">
                 <p class="field__error" id="err-name" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="phone">Tu teléfono</label>
+                <div class="phone">
+                  <select id="country" name="country" aria-label="País y código de llamada">
+                    <option value="GT" data-dial="502" data-min="8" data-max="8" data-ph="5512 3456" selected>+502 Guatemala</option>
+                    <option value="MX" data-dial="52" data-min="10" data-max="10" data-ph="55 1234 5678">+52 México</option>
+                    <option value="SV" data-dial="503" data-min="8" data-max="8" data-ph="7012 3456">+503 El Salvador</option>
+                    <option value="HN" data-dial="504" data-min="8" data-max="8" data-ph="9123 4567">+504 Honduras</option>
+                    <option value="NI" data-dial="505" data-min="8" data-max="8" data-ph="8123 4567">+505 Nicaragua</option>
+                    <option value="CR" data-dial="506" data-min="8" data-max="8" data-ph="8312 3456">+506 Costa Rica</option>
+                    <option value="PA" data-dial="507" data-min="7" data-max="8" data-ph="6123 4567">+507 Panamá</option>
+                    <option value="BZ" data-dial="501" data-min="7" data-max="7" data-ph="622 1234">+501 Belice</option>
+                    <option value="US" data-dial="1" data-min="10" data-max="10" data-ph="212 555 1234">+1 Estados Unidos</option>
+                    <option value="CA" data-dial="1" data-min="10" data-max="10" data-ph="416 555 1234">+1 Canadá</option>
+                    <option value="CO" data-dial="57" data-min="10" data-max="10" data-ph="300 123 4567">+57 Colombia</option>
+                    <option value="VE" data-dial="58" data-min="10" data-max="10" data-ph="412 123 4567">+58 Venezuela</option>
+                    <option value="EC" data-dial="593" data-min="8" data-max="9" data-ph="99 123 4567">+593 Ecuador</option>
+                    <option value="PE" data-dial="51" data-min="8" data-max="9" data-ph="912 345 678">+51 Perú</option>
+                    <option value="BO" data-dial="591" data-min="8" data-max="8" data-ph="7123 4567">+591 Bolivia</option>
+                    <option value="CL" data-dial="56" data-min="9" data-max="9" data-ph="9 1234 5678">+56 Chile</option>
+                    <option value="AR" data-dial="54" data-min="10" data-max="10" data-ph="11 2345 6789">+54 Argentina</option>
+                    <option value="UY" data-dial="598" data-min="8" data-max="8" data-ph="91 234 567">+598 Uruguay</option>
+                    <option value="PY" data-dial="595" data-min="9" data-max="9" data-ph="981 123 456">+595 Paraguay</option>
+                    <option value="BR" data-dial="55" data-min="10" data-max="11" data-ph="11 91234 5678">+55 Brasil</option>
+                    <option value="CU" data-dial="53" data-min="8" data-max="8" data-ph="5123 4567">+53 Cuba</option>
+                    <option value="DO" data-dial="1" data-min="10" data-max="10" data-ph="809 555 1234">+1 República Dominicana</option>
+                    <option value="PR" data-dial="1" data-min="10" data-max="10" data-ph="787 555 1234">+1 Puerto Rico</option>
+                    <option value="ES" data-dial="34" data-min="9" data-max="9" data-ph="612 345 678">+34 España</option>
+                    <option value="PT" data-dial="351" data-min="9" data-max="9" data-ph="912 345 678">+351 Portugal</option>
+                    <option value="FR" data-dial="33" data-min="9" data-max="9" data-ph="6 12 34 56 78">+33 Francia</option>
+                    <option value="DE" data-dial="49" data-min="10" data-max="11" data-ph="151 2345 6789">+49 Alemania</option>
+                    <option value="IT" data-dial="39" data-min="9" data-max="10" data-ph="312 345 6789">+39 Italia</option>
+                    <option value="GB" data-dial="44" data-min="10" data-max="10" data-ph="7400 123456">+44 Reino Unido</option>
+                    <option value="IE" data-dial="353" data-min="8" data-max="9" data-ph="85 123 4567">+353 Irlanda</option>
+                    <option value="NL" data-dial="31" data-min="9" data-max="9" data-ph="6 12345678">+31 Países Bajos</option>
+                    <option value="BE" data-dial="32" data-min="8" data-max="9" data-ph="470 12 34 56">+32 Bélgica</option>
+                    <option value="CH" data-dial="41" data-min="9" data-max="9" data-ph="78 123 45 67">+41 Suiza</option>
+                    <option value="SE" data-dial="46" data-min="7" data-max="9" data-ph="70 123 45 67">+46 Suecia</option>
+                    <option value="NO" data-dial="47" data-min="8" data-max="8" data-ph="412 34 567">+47 Noruega</option>
+                    <option value="DK" data-dial="45" data-min="8" data-max="8" data-ph="32 12 34 56">+45 Dinamarca</option>
+                    <option value="PL" data-dial="48" data-min="9" data-max="9" data-ph="512 345 678">+48 Polonia</option>
+                    <option value="RU" data-dial="7" data-min="10" data-max="10" data-ph="912 345 67 89">+7 Rusia</option>
+                    <option value="UA" data-dial="380" data-min="9" data-max="9" data-ph="50 123 4567">+380 Ucrania</option>
+                    <option value="TR" data-dial="90" data-min="10" data-max="10" data-ph="501 234 56 78">+90 Turquía</option>
+                    <option value="MA" data-dial="212" data-min="9" data-max="9" data-ph="612 345678">+212 Marruecos</option>
+                    <option value="EG" data-dial="20" data-min="9" data-max="10" data-ph="100 123 4567">+20 Egipto</option>
+                    <option value="NG" data-dial="234" data-min="8" data-max="10" data-ph="802 123 4567">+234 Nigeria</option>
+                    <option value="ZA" data-dial="27" data-min="9" data-max="9" data-ph="71 234 5678">+27 Sudáfrica</option>
+                    <option value="KE" data-dial="254" data-min="9" data-max="9" data-ph="712 345678">+254 Kenia</option>
+                    <option value="IL" data-dial="972" data-min="8" data-max="9" data-ph="50 123 4567">+972 Israel</option>
+                    <option value="SA" data-dial="966" data-min="9" data-max="9" data-ph="51 234 5678">+966 Arabia Saudita</option>
+                    <option value="AE" data-dial="971" data-min="8" data-max="9" data-ph="50 123 4567">+971 Emiratos Árabes Unidos</option>
+                    <option value="IN" data-dial="91" data-min="10" data-max="10" data-ph="81234 56789">+91 India</option>
+                    <option value="PK" data-dial="92" data-min="9" data-max="10" data-ph="301 2345678">+92 Pakistán</option>
+                    <option value="CN" data-dial="86" data-min="10" data-max="11" data-ph="131 2345 6789">+86 China</option>
+                    <option value="JP" data-dial="81" data-min="9" data-max="10" data-ph="90 1234 5678">+81 Japón</option>
+                    <option value="KR" data-dial="82" data-min="9" data-max="10" data-ph="10 1234 5678">+82 Corea del Sur</option>
+                    <option value="PH" data-dial="63" data-min="10" data-max="10" data-ph="912 345 6789">+63 Filipinas</option>
+                    <option value="ID" data-dial="62" data-min="9" data-max="12" data-ph="812 3456 7890">+62 Indonesia</option>
+                    <option value="VN" data-dial="84" data-min="9" data-max="10" data-ph="91 234 56 78">+84 Vietnam</option>
+                    <option value="TH" data-dial="66" data-min="8" data-max="9" data-ph="81 234 5678">+66 Tailandia</option>
+                    <option value="AU" data-dial="61" data-min="9" data-max="9" data-ph="412 345 678">+61 Australia</option>
+                    <option value="NZ" data-dial="64" data-min="8" data-max="10" data-ph="21 123 4567">+64 Nueva Zelanda</option>
+                  </select>
+                  <input type="tel" id="phone" name="phone" placeholder="5512 3456" autocomplete="tel-national" inputmode="numeric" aria-describedby="err-phone">
+                </div>
+                <p class="field__error" id="err-phone" role="alert"></p>
               </div>
 
               <div class="field">
